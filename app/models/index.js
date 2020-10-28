@@ -1,0 +1,11 @@
+const dbConfig = require("../config/db.config.js");
+const mongoose = require("mongoose");
+const model = require("./model");
+const db = {};
+db.mongoose = mongoose;
+db.url = dbConfig.url;
+// db.shop = require("./shop.model.js")(mongoose);
+db.shop = model.Shop(mongoose);
+db.sanPham = model.SanPham(mongoose);
+db.gioHang = model.GioHang(mongoose);
+module.exports = db;
